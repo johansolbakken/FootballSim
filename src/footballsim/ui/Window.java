@@ -6,7 +6,7 @@ import footballsim.logging.Logger;
  * Custom window class
  */
 public class Window {
-    
+    // TODO: Event callback for event systems
     private boolean m_ShouldClose = false;
 
     private int m_Width, m_Height;

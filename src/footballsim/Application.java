@@ -49,4 +49,5 @@ public class Application {
 
     }
     
+    // TODO: Event callback for applciation class
 }
