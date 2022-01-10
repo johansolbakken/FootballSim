@@ -1,5 +1,8 @@
 package footballsim;
 
+import footballsim.events.Event;
+import footballsim.events.EventDispatcher;
+import footballsim.events.EventType;
 import footballsim.game.Game;
 import footballsim.logging.Logger;
 import footballsim.ui.Window;
@@ -26,8 +29,10 @@ public class Application {
     /*
         Responds to events
     */
-    private void onEvent() {
-
+    private void onEvent(Event event) {
+        EventDispatcher dispatcher = new EventDispatcher(event);
+        dispatcher.dispatch(EventType.WindowClose, (e) -> { m_Running = false; return true; });
+        Logger.info(event.toString());
     }
 
     /*
@@ -37,8 +42,9 @@ public class Application {
         m_Running = true;
 
         while (m_Running) {
-            onEvent();
             onUpdate();
+
+            //m_Window.onUpdate();
         }
     }
 
