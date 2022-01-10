@@ -1,11 +1,17 @@
 package footballsim.game;
 
+import footballsim.logging.Logger;
+
 class GameResult {
 
 }
 
 public class Game {
     private Bracket bracket = new Bracket();
+
+    public Game() {
+        Logger.info("Created new game");
+    }
 
     /**
      * Plays the next round

@@ -1,15 +1,15 @@
 package footballsim;
 
+import footballsim.core.Core;
 import footballsim.logging.LogLevel;
 import footballsim.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
-        Logger.init();
-        Logger.setLevel(LogLevel.ALL);
-        Logger.info("Hello");
-        Logger.config("What is going on here?");
-        Logger.severe("Krise");
-        Logger.finest("Diamant");
+        Core.initializeCore();
+
+        Application app = new Application();
+        app.run();
+        app.destroy();
     }
 }

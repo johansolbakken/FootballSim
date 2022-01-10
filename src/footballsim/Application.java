@@ -1,27 +1,20 @@
 package footballsim;
 
 import footballsim.game.Game;
+import footballsim.logging.Logger;
 import footballsim.ui.Window;
 
 public class Application {
-    /*
-        Implementing singleton pattern
-    */
-    private static Application instance = new Application();
+    private boolean m_Running = false;
+    private Window m_Window;
+    private Game m_Game;
 
-    public static Application getInstance() {
-        return instance;
+    public Application() {
+        Logger.info("Application is created");
+
+        m_Window = new Window("Football Simulator", 1080, 720);
+        m_Game = new Game();
     }
-
-    private Application() {}
-
-    /*
-        Application
-    */
-
-    private boolean running = false;
-    private Window window = new Window("Football Simulator", 1080, 720);
-    private Game game = new Game();
 
     /*
         Updates all components
@@ -41,12 +34,19 @@ public class Application {
         Main loop for application
     */
     public void run() {
-        running = true;
+        m_Running = true;
 
-        while (running) {
+        while (m_Running) {
             onEvent();
             onUpdate();
         }
+    }
+
+    /*
+        Destroys resources
+    */
+    public void destroy() {
+
     }
     
 }
