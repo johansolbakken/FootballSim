@@ -1,0 +1,10 @@
+/bin/
+/.classpath
+/.idea/.gitignore
+/.project
+/.idea/checkstyle-idea.xml
+/footballsim.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/uiDesigner.xml
+/.idea/vcs.xml

@@ -29,7 +29,7 @@ public class MouseMovedEvent extends Event {
 
     @Override
     public String getName() {
-        return "MouseMovedEvent";
+        return "MouseMovedEvent: " + getX() + ", " + getY();
     }
     
 }
